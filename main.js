@@ -1,11 +1,9 @@
-
-
 // ==UserScript==
 // @name         Paper-io.com bot
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @version      0.2
+// @description  A paper-io.com bot
+// @author       ttoocs
 // @match        http://paper-io.com/
 // @grant        none
 // ==/UserScript==
@@ -19,7 +17,7 @@
 //    // -1 for white, and -2 for wall.
 //  Pass this map to the AI
 //  Have output-functions (outside of the AI)
-//  This allows the AI to be the same while changing the IO, to permit easy changing of anti-hacker stuff.
+//  This allows the AI to be the same while changing the IO, to permit easy changing if the UI changes
 
 
 (function() {
@@ -28,6 +26,8 @@
     // Your code here...
 })();
 
+
+//Doesn't seem to work. (atleast not in chrome)
 sendKey = function(keycode){
 
   //var keyboardEvent = document.createEvent("KeyboardEvent");
