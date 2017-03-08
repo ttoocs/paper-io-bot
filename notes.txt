@@ -1,0 +1,26 @@
+body
+  div (id="paperio")
+    div id="the_game"
+      div id="outer_grid"
+        div id="grid"
+          div id="playground"
+          div id="playpaths"
+          div id="playnews"
+          div id="playcursors"
+
+
+
+You seem to always be "p1_" (Seems true)
+You see the entire map always (Just zoom out)
+Class P#_owned is the land of that player (via px)
+ID P#_curser is the curser for that player
+Class P#_drawed is that players line //Note: There
+  is suffixes and stuff here, for the folds.
+    //turned_12 (Each with the prefix for player)
+    //turned_14
+    //turned_21
+    //turned_23
+    //turned_32
+    //turned_34
+    //turned_41
+    //turned_43
