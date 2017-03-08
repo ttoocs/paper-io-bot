@@ -27,6 +27,21 @@
 })();
 
 
+// Keycode for 't'. Add more to disable other ctrl+X interceptions
+keycodes = [84];
+
+(window.opera ? document.body : document).addEventListener('keydown', function(e) {
+  // alert(e.keyCode ); //uncomment to find more keyCodes
+  if (keycodes.indexOf(e.keyCode) != -1) {
+    e.cancelBubble = true;
+    e.stopImmediatePropagation();
+    alert("Gotcha!"); //ucomment to check if it's seeing the combo
+  }
+  return false;
+}, !window.opera);
+
+
+
 //Doesn't seem to work. (atleast not in chrome)
 sendKey = function(keycode){
 
@@ -34,18 +49,19 @@ sendKey = function(keycode){
   //var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? "initKeyboardEvent" : "initKeyEvent";
 
 
-  var e = new KeyboardEvent("keydown",
-                    {bubbles : true, cancelable : true, key : keycode }
-                  // "keypress", // event type : keydown, keyup, keypress
-                  //  true, // bubbles
-                  //  true, // cancelable
-                  //  window, // viewArg: should be window
-                  //  false, // ctrlKeyArg
-                  //  false, // altKeyArg
-                  //  false, // shiftKeyArg
-                  //  false, // metaKeyArg
-                  //  0, // keyCodeArg : unsigned long the virtual key code, else 0
-                  //  0 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
+  var e = new KeyboardEvent(
+                  // "keydown",
+                  //  {bubbles : true, cancelable : true, key : keycode }
+                   "keypress", // event type : keydown, keyup, keypress
+                    true, // bubbles
+                    true, // cancelable
+                    window, // viewArg: should be window
+                    false, // ctrlKeyArg
+                    false, // altKeyArg
+                    false, // shiftKeyArg
+                    false, // metaKeyArg
+                    0, // keyCodeArg : unsigned long the virtual key code, else 0
+                    0 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
                   );
   //console.log(keyboardEvent.key);
   console.log(e);
